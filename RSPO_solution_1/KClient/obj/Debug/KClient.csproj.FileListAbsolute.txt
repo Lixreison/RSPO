@@ -1,1 +1,9 @@
 C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\bin\Debug\KClient.exe.config
+C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\bin\Debug\KClient.exe
+C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\bin\Debug\KClient.pdb
+C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\obj\Debug\KClient.csprojResolveAssemblyReference.cache
+C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\obj\Debug\KClient.Form1.resources
+C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\obj\Debug\KClient.Properties.Resources.resources
+C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\obj\Debug\KClient.csproj.GenerateResource.Cache
+C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\obj\Debug\KClient.exe
+C:\Users\Никита\Documents\RSPO\RSPO_solution_1\KClient\obj\Debug\KClient.pdb
