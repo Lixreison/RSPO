@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.button_Connect = new System.Windows.Forms.Button();
-            this.button_Disconnect = new System.Windows.Forms.Button();
+            this.button_Settings = new System.Windows.Forms.Button();
             this.button_Close = new System.Windows.Forms.Button();
             this.textBox_Ramp_1 = new System.Windows.Forms.TextBox();
             this.groupBox_Device_1 = new System.Windows.Forms.GroupBox();
-            this.label_Ramp_1 = new System.Windows.Forms.Label();
-            this.label_Random_1 = new System.Windows.Forms.Label();
-            this.textBox_Random_1 = new System.Windows.Forms.TextBox();
             this.label_Sin_1 = new System.Windows.Forms.Label();
+            this.label_Random_1 = new System.Windows.Forms.Label();
             this.textBox_Sin_1 = new System.Windows.Forms.TextBox();
+            this.label_Ramp_1 = new System.Windows.Forms.Label();
+            this.textBox_Random_1 = new System.Windows.Forms.TextBox();
             this.groupBox_Device_2 = new System.Windows.Forms.GroupBox();
             this.label_Sin_2 = new System.Windows.Forms.Label();
             this.label_Random_2 = new System.Windows.Forms.Label();
@@ -59,6 +59,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Random_4 = new System.Windows.Forms.TextBox();
             this.textBox_Ramp_4 = new System.Windows.Forms.TextBox();
+            this.button_Check_connection = new System.Windows.Forms.Button();
+            this.label_server_state = new System.Windows.Forms.Label();
             this.groupBox_Device_1.SuspendLayout();
             this.groupBox_Device_2.SuspendLayout();
             this.groupBox_Device_3.SuspendLayout();
@@ -67,25 +69,27 @@
             // 
             // button_Connect
             // 
-            this.button_Connect.Location = new System.Drawing.Point(12, 180);
+            this.button_Connect.Location = new System.Drawing.Point(9, 221);
             this.button_Connect.Name = "button_Connect";
             this.button_Connect.Size = new System.Drawing.Size(75, 23);
             this.button_Connect.TabIndex = 0;
             this.button_Connect.Text = "Connect";
             this.button_Connect.UseVisualStyleBackColor = true;
+            this.button_Connect.Click += new System.EventHandler(this.button_Connect_Click);
             // 
-            // button_Disconnect
+            // button_Settings
             // 
-            this.button_Disconnect.Location = new System.Drawing.Point(93, 180);
-            this.button_Disconnect.Name = "button_Disconnect";
-            this.button_Disconnect.Size = new System.Drawing.Size(75, 23);
-            this.button_Disconnect.TabIndex = 1;
-            this.button_Disconnect.Text = "Disconnect";
-            this.button_Disconnect.UseVisualStyleBackColor = true;
+            this.button_Settings.Location = new System.Drawing.Point(90, 221);
+            this.button_Settings.Name = "button_Settings";
+            this.button_Settings.Size = new System.Drawing.Size(75, 23);
+            this.button_Settings.TabIndex = 1;
+            this.button_Settings.Text = "Settings";
+            this.button_Settings.UseVisualStyleBackColor = true;
+            this.button_Settings.Click += new System.EventHandler(this.button_Settings_Click);
             // 
             // button_Close
             // 
-            this.button_Close.Location = new System.Drawing.Point(451, 180);
+            this.button_Close.Location = new System.Drawing.Point(448, 221);
             this.button_Close.Name = "button_Close";
             this.button_Close.Size = new System.Drawing.Size(75, 23);
             this.button_Close.TabIndex = 2;
@@ -115,6 +119,32 @@
             this.groupBox_Device_1.TabIndex = 4;
             this.groupBox_Device_1.TabStop = false;
             this.groupBox_Device_1.Text = "Device 1";
+            this.groupBox_Device_1.Enter += new System.EventHandler(this.groupBox_Device_1_Enter);
+            // 
+            // label_Sin_1
+            // 
+            this.label_Sin_1.AutoSize = true;
+            this.label_Sin_1.Location = new System.Drawing.Point(6, 99);
+            this.label_Sin_1.Name = "label_Sin_1";
+            this.label_Sin_1.Size = new System.Drawing.Size(31, 13);
+            this.label_Sin_1.TabIndex = 7;
+            this.label_Sin_1.Text = "Sin 1";
+            // 
+            // label_Random_1
+            // 
+            this.label_Random_1.AutoSize = true;
+            this.label_Random_1.Location = new System.Drawing.Point(6, 59);
+            this.label_Random_1.Name = "label_Random_1";
+            this.label_Random_1.Size = new System.Drawing.Size(56, 13);
+            this.label_Random_1.TabIndex = 7;
+            this.label_Random_1.Text = "Random 1";
+            // 
+            // textBox_Sin_1
+            // 
+            this.textBox_Sin_1.Location = new System.Drawing.Point(9, 115);
+            this.textBox_Sin_1.Name = "textBox_Sin_1";
+            this.textBox_Sin_1.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Sin_1.TabIndex = 6;
             // 
             // label_Ramp_1
             // 
@@ -126,37 +156,12 @@
             this.label_Ramp_1.Text = "Ramp 1";
             this.label_Ramp_1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label_Random_1
-            // 
-            this.label_Random_1.AutoSize = true;
-            this.label_Random_1.Location = new System.Drawing.Point(6, 59);
-            this.label_Random_1.Name = "label_Random_1";
-            this.label_Random_1.Size = new System.Drawing.Size(56, 13);
-            this.label_Random_1.TabIndex = 7;
-            this.label_Random_1.Text = "Random 1";
-            // 
             // textBox_Random_1
             // 
             this.textBox_Random_1.Location = new System.Drawing.Point(9, 75);
             this.textBox_Random_1.Name = "textBox_Random_1";
             this.textBox_Random_1.Size = new System.Drawing.Size(100, 20);
             this.textBox_Random_1.TabIndex = 6;
-            // 
-            // label_Sin_1
-            // 
-            this.label_Sin_1.AutoSize = true;
-            this.label_Sin_1.Location = new System.Drawing.Point(6, 99);
-            this.label_Sin_1.Name = "label_Sin_1";
-            this.label_Sin_1.Size = new System.Drawing.Size(31, 13);
-            this.label_Sin_1.TabIndex = 7;
-            this.label_Sin_1.Text = "Sin 1";
-            // 
-            // textBox_Sin_1
-            // 
-            this.textBox_Sin_1.Location = new System.Drawing.Point(9, 115);
-            this.textBox_Sin_1.Name = "textBox_Sin_1";
-            this.textBox_Sin_1.Size = new System.Drawing.Size(100, 20);
-            this.textBox_Sin_1.TabIndex = 6;
             // 
             // groupBox_Device_2
             // 
@@ -347,19 +352,41 @@
             this.textBox_Ramp_4.Size = new System.Drawing.Size(100, 20);
             this.textBox_Ramp_4.TabIndex = 3;
             // 
+            // button_Check_connection
+            // 
+            this.button_Check_connection.Location = new System.Drawing.Point(171, 221);
+            this.button_Check_connection.Name = "button_Check_connection";
+            this.button_Check_connection.Size = new System.Drawing.Size(107, 23);
+            this.button_Check_connection.TabIndex = 8;
+            this.button_Check_connection.Text = "Check connection";
+            this.button_Check_connection.UseVisualStyleBackColor = true;
+            this.button_Check_connection.Click += new System.EventHandler(this.button_Check_connection_Click);
+            // 
+            // label_server_state
+            // 
+            this.label_server_state.AutoSize = true;
+            this.label_server_state.Location = new System.Drawing.Point(12, 205);
+            this.label_server_state.Name = "label_server_state";
+            this.label_server_state.Size = new System.Drawing.Size(93, 13);
+            this.label_server_state.TabIndex = 9;
+            this.label_server_state.Text = "label_server_state";
+            this.label_server_state.Click += new System.EventHandler(this.label4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(538, 213);
+            this.ClientSize = new System.Drawing.Size(538, 256);
+            this.Controls.Add(this.label_server_state);
+            this.Controls.Add(this.button_Check_connection);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox_Device_3);
             this.Controls.Add(this.groupBox_Device_2);
             this.Controls.Add(this.groupBox_Device_1);
             this.Controls.Add(this.button_Close);
-            this.Controls.Add(this.button_Disconnect);
+            this.Controls.Add(this.button_Settings);
             this.Controls.Add(this.button_Connect);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -375,13 +402,14 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button_Connect;
-        private System.Windows.Forms.Button button_Disconnect;
+        private System.Windows.Forms.Button button_Settings;
         private System.Windows.Forms.Button button_Close;
         private System.Windows.Forms.TextBox textBox_Ramp_1;
         private System.Windows.Forms.GroupBox groupBox_Device_1;
@@ -411,6 +439,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_Random_4;
         private System.Windows.Forms.TextBox textBox_Ramp_4;
+        private System.Windows.Forms.Button button_Check_connection;
+        private System.Windows.Forms.Label label_server_state;
     }
 }
 
