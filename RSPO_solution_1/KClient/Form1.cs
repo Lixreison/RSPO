@@ -200,8 +200,8 @@ namespace KClient
 
         public void SubscribeToOPCDAServerEvents(DaServerMgt.ServerStateChangedEventHandler DAServer_StateChanged, DaServerMgt.DataChangedEventHandler DAServer_DataChanged)
         {
-            DAServer_StateChanged += new Kepware.ClientAce.OpcDaClient.DaServerMgt.ServerStateChangedEventHandler(DAServer_StateChanged);
-            DAServer_DataChanged += new DaServerMgt.DataChangedEventHandler(DAServer_DataChanged);
+            DAServer.ServerStateChanged += new Kepware.ClientAce.OpcDaClient.DaServerMgt.ServerStateChangedEventHandler(DAServer_StateChanged);
+            DAServer.DataChanged += new DaServerMgt.DataChangedEventHandler(DAServer_DataChanged);
         }
 
         // Функция подключения/отключения к/от серверу(а)
@@ -282,7 +282,17 @@ namespace KClient
 
         private void button_Connect_Click(object sender, EventArgs e)
         {
-
+            if (DAServer.IsConnected == true)
+            {
+                ConnectOPCServer(false);
+                button_Connect.Text = "Coneect";
+            }
+            else
+            {
+                ConnectOPCServer(true);
+                ModifySubscription(true);
+                button_Connect.Text = "Disconnect";
+            }
         }
 
         private void button_Settings_Click(object sender, EventArgs e)
