@@ -81,6 +81,54 @@ namespace KClient
                 Type = OPCTagType.Float
             });
 
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Ramp2",
+                Type = OPCTagType.Char
+            });
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Random2",
+                Type = OPCTagType.Long
+            });
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Sine2",
+                Type = OPCTagType.Float
+            });
+
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Ramp3",
+                Type = OPCTagType.Char
+            });
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Random3",
+                Type = OPCTagType.Long
+            });
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Sine3",
+                Type = OPCTagType.Float
+            });
+
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Ramp4",
+                Type = OPCTagType.Char
+            });
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Random4",
+                Type = OPCTagType.Long
+            });
+            TagList.Add(new OPCTag()
+            {
+                Name = "Simulation Examples.Functions.Sine4",
+                Type = OPCTagType.Float
+            });
+
             // Определение локальных переменных и заполнение переменной itemIdentifiers
             bool active = false;
             int updateRate = UpdateRate;
@@ -175,6 +223,36 @@ namespace KClient
                         break;
                     case 2:
                         textBox_Sin_1.Text = item.Value.ToString();
+                        break;
+
+                    case 3:
+                        textBox_Ramp_2.Text = item.Value.ToString();
+                        break;
+                    case 4:
+                        textBox_Random_2.Text = item.Value.ToString();
+                        break;
+                    case 5:
+                        textBox_Sin_2.Text = item.Value.ToString();
+                        break;
+
+                    case 6:
+                        textBox_Ramp_3.Text = item.Value.ToString();
+                        break;
+                    case 7:
+                        textBox_Random_3.Text = item.Value.ToString();
+                        break;
+                    case 8:
+                        textBox_Sin_3.Text = item.Value.ToString();
+                        break;
+
+                    case 9:
+                        textBox_Ramp_4.Text = item.Value.ToString();
+                        break;
+                    case 10:
+                        textBox_Random_4.Text = item.Value.ToString();
+                        break;
+                    case 11:
+                        textBox_Sin_4.Text = item.Value.ToString();
                         break;
                 }
             }
