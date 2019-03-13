@@ -67,65 +67,65 @@ namespace KClient
             List<OPCTag> TagList = new List<OPCTag>();
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Ramp1",
+                Name = settings.TagRamp1,
                 Type = OPCTagType.Char
             });
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Random1",
+                Name = settings.TagRandom1,
                 Type = OPCTagType.Long
             });
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Sine1",
+                Name = settings.TagSin1,
                 Type = OPCTagType.Float
             });
 
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Ramp2",
+                Name = settings.TagRamp2,
                 Type = OPCTagType.Char
             });
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Random2",
+                Name = settings.TagRandom2,
                 Type = OPCTagType.Long
             });
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Sine2",
+                Name = settings.TagSin2,
                 Type = OPCTagType.Float
             });
 
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Ramp3",
+                Name = settings.TagRamp3,
                 Type = OPCTagType.Char
             });
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Random3",
+                Name = settings.TagRandom3,
                 Type = OPCTagType.Long
             });
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Sine3",
+                Name = settings.TagSin3,
                 Type = OPCTagType.Float
             });
 
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Ramp4",
+                Name = settings.TagRamp4,
                 Type = OPCTagType.Char
             });
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Random4",
+                Name = settings.TagRandom4,
                 Type = OPCTagType.Long
             });
             TagList.Add(new OPCTag()
             {
-                Name = "Simulation Examples.Functions.Sine4",
+                Name = settings.TagSin4,
                 Type = OPCTagType.Float
             });
 
@@ -313,15 +313,21 @@ namespace KClient
             }
         }
 
+        public Settings settings = new Settings();
+        
         public Form1()
         {
             InitializeComponent();
+
+            settings.Load();
 
             KeepAliveTime = 1000;
             RetryAfterConnectionError = true;
             RetryInitialConnection = false;
             ClientName = "OPCClient";
-            URL = "opcda://localhost/Kepware.KEPServerEX.V6/";
+            URL = settings.OPCServerURL;
+
+            //URL = "opcda://localhost/Kepware.KEPServerEX.V6/";
 
             SubscribeToOPCDAServerEvents(DAServer_StateChanged, DAServer_DataChanged);
 
@@ -375,7 +381,11 @@ namespace KClient
 
         private void button_Settings_Click(object sender, EventArgs e)
         {
-
+            FormSettings frmSettings = new FormSettings();
+            if (frmSettings.ShowDialog() == DialogResult.OK)
+            {
+                settings.Load();
+            }
         }
 
         private void button_Check_connection_Click(object sender, EventArgs e)
