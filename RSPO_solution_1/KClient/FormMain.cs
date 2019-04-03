@@ -11,7 +11,7 @@ using Kepware.ClientAce.OpcDaClient;
 
 namespace KClient
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         const int MAX_POINT_COUNT = 20;
 
@@ -20,6 +20,7 @@ namespace KClient
         private int KeepAliveTime;
         private bool RetryAfterConnectionError;
         private bool RetryInitialConnection;
+        private string ClientName = "OPCClient";
 
         public DaServerMgt DAServer = new DaServerMgt();
         private ConnectInfo connectInfo = new ConnectInfo();
@@ -427,7 +428,7 @@ namespace KClient
             }
         }
         
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
             settings.Load();
@@ -435,7 +436,6 @@ namespace KClient
             KeepAliveTime = 1000;
             RetryAfterConnectionError = true;
             RetryInitialConnection = false;
-            ClientName = "OPCClient";
             URL = settings.OPCServerURL;
 
             SubscribeToOPCDAServerEvents(DAServer_StateChanged, DAServer_DataChanged);
@@ -475,9 +475,22 @@ namespace KClient
             {
                 ConnectOPCServer(true);
                 button_Connect.Text = "Disconnect";
+
                 opcPanel1.SinChartPoint.Clear();
                 opcPanel1.RampChartPoint.Clear();
                 opcPanel1.RandomChartPoint.Clear();
+
+                opcPanel2.SinChartPoint.Clear();
+                opcPanel2.RampChartPoint.Clear();
+                opcPanel2.RandomChartPoint.Clear();
+
+                opcPanel3.SinChartPoint.Clear();
+                opcPanel3.RampChartPoint.Clear();
+                opcPanel3.RandomChartPoint.Clear();
+
+                opcPanel4.SinChartPoint.Clear();
+                opcPanel4.RampChartPoint.Clear();
+                opcPanel4.RandomChartPoint.Clear();
             }
             else
             {
@@ -489,10 +502,7 @@ namespace KClient
         private void button_Settings_Click(object sender, EventArgs e)
         {
             FormSettings frmSettings = new FormSettings();
-            if (frmSettings.ShowDialog() == DialogResult.OK)
-            {
-                settings.Load();
-            }
+            if (frmSettings.ShowDialog() == DialogResult.OK) settings.Load();
         }
 
         private void button_Check_connection_Click(object sender, EventArgs e)

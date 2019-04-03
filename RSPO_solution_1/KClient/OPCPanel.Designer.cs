@@ -61,7 +61,6 @@
             this.groupBox_Device.TabIndex = 5;
             this.groupBox_Device.TabStop = false;
             this.groupBox_Device.Text = "Device";
-            this.groupBox_Device.Enter += new System.EventHandler(this.groupBox_Device_Enter);
             // 
             // label_Sin
             // 
@@ -110,7 +109,6 @@
             this.textBox_Ramp.Name = "textBox_Ramp";
             this.textBox_Ramp.Size = new System.Drawing.Size(100, 20);
             this.textBox_Ramp.TabIndex = 3;
-            this.textBox_Ramp.TextChanged += new System.EventHandler(this.textBox_Ramp_TextChanged);
             // 
             // chart
             // 
@@ -139,7 +137,6 @@
             this.chart.Size = new System.Drawing.Size(121, 77);
             this.chart.TabIndex = 15;
             this.chart.Text = "chart";
-            this.chart.Click += new System.EventHandler(this.chart_Click);
             // 
             // pictureBox1
             // 

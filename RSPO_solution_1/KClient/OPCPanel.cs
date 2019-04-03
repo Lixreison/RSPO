@@ -56,10 +56,7 @@ namespace KClient
 
         public Double RampValue
         {
-            get
-            {
-                return RampValue_;
-            }
+            get { return RampValue_; }
             set
             {
                 RampValue_ = value;
@@ -68,10 +65,7 @@ namespace KClient
         }
         public Double SinValue
         {
-            get
-            {
-                return SinValue_;
-            }
+            get { return SinValue_; }
             set
             {
                 SinValue_ = value;
@@ -80,10 +74,7 @@ namespace KClient
         }
         public Double RandomValue
         {
-            get
-            {
-                return RandomValue_;
-            }
+            get { return RandomValue_; }
             set
             {
                 RandomValue_ = value;
@@ -134,21 +125,6 @@ namespace KClient
         public OPCPanel()
         {
             InitializeComponent();
-        }
-
-        private void groupBox_Device_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chart_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_Ramp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }    
     }
 }
